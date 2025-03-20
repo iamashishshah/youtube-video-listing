@@ -32,7 +32,7 @@ function renderVideos(videosArray) {
 
     videosArray.forEach((video) => {
         const videosMetaData = video.items.snippet;
-        console.log(videosMetaData);
+
 
         const anchorTag = document.createElement("a");
         anchorTag.href = `https://www.youtube.com/watch?v=${video.items.id}`;
