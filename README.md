@@ -7,7 +7,6 @@ YouVideo is a modern video discovery platform that fetches and displays the late
 - Fetches YouTube videos via Free API
 - Search functionality for filtering videos
 - Pagination to navigate through multiple pages
-- Stores last visited page using local storage
 - Responsive and user-friendly interface
 
 ## 🛠️ Tech Stack
