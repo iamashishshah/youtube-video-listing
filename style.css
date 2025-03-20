@@ -3,28 +3,45 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Inter;
-    background-color: #111111;
+
     color: rgb(255, 255, 255);
 }
 body {
+  overflow-x: hidden;
+  overflow-y: auto;
+    background-color: #111111;
     margin: 0;
     padding: 20px;
 }
 
 .feed-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
     max-width: 1200px;
     margin: auto;
 }
 
-.section-title {
+.heading-section {
+  cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
     background-color: transparent;
+    
+}
+
+.heading-section > a {
+  display: flex;
+    justify-content: start;
+    gap: 8px;
+    align-items: center;
 }
 
 .videos-section {
-    background-color:rgba(196, 228, 255, 0.09);
+    /* width: 1170px; */
+    background-color: rgba(196, 228, 255, 0.09);
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -91,8 +108,30 @@ body {
     color: #888;
 }
 
-/* From Uiverse.io by Galahhad */ 
+.pagination{
+  position: relative;
+  left: 40%;
+ }
+ .thumbnail {
+   width: 100%;  
+   height: 186px; 
+   object-fit: cover; 
+   display: block;
+   border-radius: 8px; 
+ }
+ 
+ .company-logo{
+ width: 32px;
+ height: 32px;
+ /* border-radius: ; */
+ }
+ 
+.search-container{
+  margin-bottom: 16px;
+}
+
 .search-label {
+
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -100,72 +139,114 @@ body {
     border: 1px solid transparent;
     border-radius: 12px;
     overflow: hidden;
-    background: #3D3D3D;
+    background: #3d3d3d;
     padding: 9px;
     cursor: text;
-  }
-  
-  .search-label:hover {
+}
+
+.search-label:hover {
     border-color: gray;
-  }
-  
-  .search-label:focus-within {
+}
+
+.search-label:focus-within {
     background: #464646;
     border-color: gray;
-  }
-  
-  .search-label input {
+}
+
+.search-label input {
     outline: none;
     width: 100%;
     border: none;
     background: none;
     color: rgb(162, 162, 162);
-  }
-  
-  .search-label input:focus+.slash-icon,
-  .search-label input:valid+.slash-icon {
+}
+
+.search-label input:focus + .slash-icon,
+.search-label input:valid + .slash-icon {
     display: none;
-  }
-  
-  .search-label input:valid~.search-icon {
+}
+
+.search-label input:valid ~ .search-icon {
     display: block;
-  }
-  
-  .search-label input:valid {
+}
+
+.search-label input:valid {
     width: calc(100% - 22px);
     transform: translateX(20px);
-  }
-  
-  .search-label svg,
-  .slash-icon {
+}
+
+.search-label svg,
+.slash-icon {
     position: absolute;
     color: #7e7e7e;
-  }
-  
-  .search-icon {
+}
+
+.search-icon {
     background-color: transparent;
     display: none;
     width: 12px;
     height: auto;
-  }
-  
-  .slash-icon {
+}
+
+.slash-icon {
     right: 7px;
     border: 1px solid #393838;
     background: linear-gradient(-225deg, #343434, #6d6d6d);
     border-radius: 3px;
     text-align: center;
-    box-shadow: inset 0 -2px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 1px rgba(28, 28, 29, 0.4);
+    box-shadow: inset 0 -2px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93),
+        0 1px 2px 1px rgba(28, 28, 29, 0.4);
     cursor: pointer;
     font-size: 12px;
     width: 15px;
-  }
-  
-  .slash-icon:active {
-    box-shadow: inset 0 1px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 0 rgba(28, 28, 29, 0.4);
+}
+
+.slash-icon:active {
+    box-shadow: inset 0 1px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93),
+        0 1px 2px 0 rgba(28, 28, 29, 0.4);
     text-shadow: 0 1px 0 #7e7e7e;
     color: transparent;
-  }
-a{
+}
+a {
     text-decoration: none;
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover::before {
+    transform: scaleX(1);
+}
+
+.button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+        82.3deg,
+        rgba(150, 93, 233, 1) 10.8%,
+        rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
 }
